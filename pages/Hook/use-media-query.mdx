@@ -1,0 +1,44 @@
+# useMediaQuery
+
+The `useMediaQuery` hook is a React hook that provides information about the device type and dimensions based on the screen size.
+
+## API Reference
+
+A custom React hook that returns an object containing information about the device type and dimensions.
+
+```jsx
+useMediaQuery(): {
+  device: "mobile" | "tablet" | "desktop" | null;
+  width: number | null;
+  height: number | null;
+}
+```
+
+**Return Value**
+
+| Property  | Type      | Description                                                                                     |
+| --------- | --------- | ----------------------------------------------------------------------------------------------- |
+| device    | `string`  | Represents the type of device (`"mobile"`, `"tablet"`, `"desktop"`, or `null` if undetermined). |
+| width     | `number`  | Width of the window.                                                                            |
+| height    | `number`  | Height of the window.                                                                           |
+| isMobile  | `boolean` | Boolean indicating if the device is a mobile device (`true` or `false`).                        |
+| isTablet  | `boolean` | Boolean indicating if the device is a tablet (`true` or `false`).                               |
+| isDesktop | `boolean` | Boolean indicating if the device is a desktop (`true` or `false`).                              |
+
+### Example
+
+```jsx copy
+import useMediaQuery from "@/hooks/use-media-query";
+
+function Component() {
+  const { device, width, height } = useMediaQuery();
+
+  return (
+    <div>
+      <p>Device: {device}</p>
+      <p>Width: {width}px</p>
+      <p>Height: {height}px</p>
+    </div>
+  );
+}
+```
