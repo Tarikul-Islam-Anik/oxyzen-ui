@@ -1,10 +1,10 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
-import { Slot } from '@radix-ui/react-slot';
-import { BoxVariants, boxVariants } from './variants';
+import React from "react";
+import { cn } from "@/lib/utils";
+import { Slot } from "@radix-ui/react-slot";
+import { BoxVariants, boxVariants } from "./variants";
 
-type BoxElement = React.ElementRef<'div'>;
-interface BoxProps extends React.ComponentPropsWithoutRef<'div'>, BoxVariants {
+type BoxElement = React.ElementRef<"div">;
+interface BoxProps extends React.ComponentPropsWithoutRef<"div">, BoxVariants {
   className?: string;
   children?: React.ReactNode;
   asChild?: boolean;
@@ -15,6 +15,8 @@ const Box = React.forwardRef<BoxElement, BoxProps>((props, forwardedRef) => {
     className,
     asChild,
     display,
+    border,
+    rounded,
     m,
     mt,
     mr,
@@ -36,7 +38,7 @@ const Box = React.forwardRef<BoxElement, BoxProps>((props, forwardedRef) => {
     ...boxProps
   } = props;
 
-  const Comp = asChild ? Slot : 'div';
+  const Comp = asChild ? Slot : "div";
   return (
     <Comp
       {...boxProps}
@@ -48,6 +50,8 @@ const Box = React.forwardRef<BoxElement, BoxProps>((props, forwardedRef) => {
           position,
           width,
           height,
+          border,
+          rounded,
           m,
           mt,
           mr,
@@ -69,6 +73,6 @@ const Box = React.forwardRef<BoxElement, BoxProps>((props, forwardedRef) => {
   );
 });
 
-Box.displayName = 'Box';
+Box.displayName = "Box";
 export { Box };
 export type { BoxProps };
