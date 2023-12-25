@@ -1,0 +1,37 @@
+# useScroll Hook
+
+`useScroll` is a custom React hook that allows you to track whether the user has scrolled past a certain threshold.
+
+## API Reference
+
+```typescript
+useScroll(threshold: number): boolean
+```
+
+**Parameters**
+
+| Parameter | Type   | Description                                                                  |
+| --------- | ------ | ---------------------------------------------------------------------------- |
+| threshold | number | The threshold in pixels that the user must scroll past before the hook fires |
+
+**Returns**
+
+| Value    | Type    | Description                                                                           |
+| -------- | ------- | ------------------------------------------------------------------------------------- |
+| scrolled | boolean | A boolean value that indicates whether the user has scrolled past the given threshold |
+
+## Example
+
+```jsx copy
+import useScroll from "@/hooks/use-scroll";
+
+function MyComponent() {
+  const hasScrolled = useScroll(200);
+
+  return (
+    <div>
+      {hasScrolled ? "You have scrolled past 200px" : "Keep scrolling..."}
+    </div>
+  );
+}
+```
