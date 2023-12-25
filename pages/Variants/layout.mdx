@@ -1,0 +1,133 @@
+import { Callout } from "nextra/components";
+
+# Layout Variants
+
+<Callout>
+  You can always modify the existing typography variants or add new ones by
+  editing the `components/layout/variants.ts` file.
+</Callout>
+
+## Layout components
+
+[Box](/themes/docs/components/box), [Flex](/themes/docs/components/flex) and [Grid](/themes/docs/components/grid) are foundational elements you'll use to construct layouts. Box provides block-level spacing and sizing, while Flex and Grid let you create flexible columns, rows and grids.
+
+```jsx live=true
+<Grid columns="3" gap="3">
+  <Flex direction="column" gap="3">
+    <Box height="5">
+      <DecorativeBox />
+    </Box>
+    <Box height="7">
+      <DecorativeBox />
+    </Box>
+    <Box height="9">
+      <DecorativeBox />
+    </Box>
+  </Flex>
+
+  <Flex direction="column" gap="3">
+    <Box grow="1">
+      <DecorativeBox />
+    </Box>
+    <Box height="6">
+      <DecorativeBox />
+    </Box>
+  </Flex>
+</Grid>
+```
+
+[Container](/themes/docs/components/container) and [Section](/themes/docs/components/section) are used for page level layout and allow you to contain the max width of content or apply consistent vertical spacing between sections.
+
+All layout components share a common set of props **without default values**:
+
+| Prop     | Type                                                        |
+| -------- | ----------------------------------------------------------- |
+| p        | enum                                                        |
+| px       | enum                                                        |
+| py       | enum                                                        |
+| pt       | enum                                                        |
+| pr       | enum                                                        |
+| pb       | enum                                                        |
+| pl       | enum                                                        |
+| m        | enum                                                        |
+| mx       | enum                                                        |
+| my       | enum                                                        |
+| mt       | enum                                                        |
+| mr       | enum                                                        |
+| mb       | enum                                                        |
+| ml       | enum                                                        |
+| position | `static` \| `relative` \| `absolute` \| `fixed` \| `sticky` |
+| width    | enum                                                        |
+| height   | enum                                                        |
+| border   | enum                                                        |
+| rounded  | enum                                                        |
+
+### Margin props
+
+Shorthand utilities for applying margin to any side of an element, useful when you need to apply space between elements. Margin props are available on components that render a node.
+
+```jsx {1} /mr/
+<Button mr="3" variant="soft">Cancel</Button>
+<Button>Save changes</Button>
+```
+
+| Prop | Type | Options                            |
+| ---- | ---- | ---------------------------------- |
+| m    | enum | `0` \| `2` \| `4` \| `8`           |
+| mx   | enum | `auto` \| `0` \| `2` \| `4` \| `8` |
+| my   | enum | `auto` \| `0` \| `2` \| `4` \| `8` |
+| mt   | enum | `auto` \| `0` \| `2` \| `4` \| `8` |
+| mr   | enum | `auto` \| `0` \| `2` \| `4` \| `8` |
+| mb   | enum | `auto` \| `0` \| `2` \| `4` \| `8` |
+| ml   | enum | `auto` \| `0` \| `2` \| `4` \| `8` |
+
+### Padding props
+
+Shorthand utilities for applying padding to any side of an element. Padding props are available on components that render a node.
+
+```jsx {1} /pr/
+<div pr="3">
+  <Text variant="heading">Edit your profile</Text>
+</div>
+```
+
+| Prop | Type | Options                  |
+| ---- | ---- | ------------------------ |
+| p    | enum | `0` \| `2` \| `4` \| `8` |
+| px   | enum | `0` \| `2` \| `4` \| `8` |
+| py   | enum | `0` \| `2` \| `4` \| `8` |
+| pt   | enum | `0` \| `2` \| `4` \| `8` |
+| pr   | enum | `0` \| `2` \| `4` \| `8` |
+| pb   | enum | `0` \| `2` \| `4` \| `8` |
+| pl   | enum | `0` \| `2` \| `4` \| `8` |
+
+### Display props
+
+Shorthand utilities for applying display to an element. Display props are available on components that render a node.
+
+```jsx {1} /display/
+<Box display="flex" justifyContent="center">
+  <Text variant="heading">Edit your profile</Text>
+</Box>
+```
+
+| Prop    | Type | Options                                                                    |
+| ------- | ---- | -------------------------------------------------------------------------- |
+| display | enum | `block` \| `flex` \| `inline-block` \| `inline-flex` \| `inline` \| `none` |
+
+### Position props
+
+Shorthand utilities for applying position to an element. Position props are available on components that render a node.
+
+```jsx {1} /position/
+<Box position="relative">
+  <Box position="absolute" top="0" right="0">
+    <Button variant="soft">Cancel</Button>
+  </Box>
+  <Text variant="heading">Edit your profile</Text>
+</Box>
+```
+
+| Prop     | Type | Options                                                     |
+| -------- | ---- | ----------------------------------------------------------- |
+| position | enum | `static` \| `relative` \| `absolute` \| `fixed` \| `sticky` |
