@@ -1,18 +1,18 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
-import { Slot } from '@radix-ui/react-slot';
+import React from "react";
+import { cn } from "@/lib/utils";
+import { Slot } from "@radix-ui/react-slot";
 import {
   boxVariants,
   flexVariants,
   BoxVariants,
   FlexVariants,
-} from './variants';
-import { cx } from 'class-variance-authority';
+} from "./variants";
+import { cx } from "class-variance-authority";
 
-type FlexElement = React.ElementRef<'div'>;
+type FlexElement = React.ElementRef<"div">;
 
 interface FlexProps
-  extends React.ComponentPropsWithoutRef<'div'>,
+  extends React.ComponentPropsWithoutRef<"div">,
     BoxVariants,
     FlexVariants {
   asChild?: boolean;
@@ -33,6 +33,8 @@ const Flex = React.forwardRef<FlexElement, FlexProps>((props, forwardedRef) => {
     position,
     width,
     height,
+    border,
+    rounded,
     m,
     mt,
     mr,
@@ -53,11 +55,13 @@ const Flex = React.forwardRef<FlexElement, FlexProps>((props, forwardedRef) => {
   const flexClassName = cn(
     cx(
       boxVariants({
-        display: 'flex',
+        display: "flex",
         gap,
         position,
         width,
         height,
+        border,
+        rounded,
         m,
         mt,
         mr,
@@ -81,7 +85,7 @@ const Flex = React.forwardRef<FlexElement, FlexProps>((props, forwardedRef) => {
       })
     )
   );
-  const Comp = asChild ? Slot : 'div';
+  const Comp = asChild ? Slot : "div";
 
   return (
     <Comp
@@ -92,6 +96,6 @@ const Flex = React.forwardRef<FlexElement, FlexProps>((props, forwardedRef) => {
   );
 });
 
-Flex.displayName = 'Flex';
+Flex.displayName = "Flex";
 export { Flex };
 export type { FlexProps };
