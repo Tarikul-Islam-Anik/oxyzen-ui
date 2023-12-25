@@ -2,9 +2,9 @@
   "index": "Introduction",
   "getting-started": "Getting Started",
   "cli": "CLI",
-  "Variants": "",
-  "Context": "",
-  "Layout": "",
-  "Typography": "",
-  "Hooks": ""
+  "Variants": "Variants",
+  "Context": "Context",
+  "Layout": "Layout",
+  "Typography": "Typography",
+  "Hook": "Hook"
 }
