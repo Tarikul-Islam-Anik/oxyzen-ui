@@ -1,0 +1,67 @@
+import { Callout } from "nextra/components";
+
+# buildProviderTree Function
+
+The `buildProviderTree` function constructs a tree of React context providers based on the array of components with their respective props.
+
+## API Reference
+
+`buildProviderTree()`
+
+A function that constructs a tree of React context providers.
+
+**Parameters**
+
+| Parameter             | Type                   | Description                                                                |
+| --------------------- | ---------------------- | -------------------------------------------------------------------------- |
+| `componentsWithProps` | `ComponentWithProps[]` | An array of tuples representing React components and their optional props. |
+
+**Return Value**
+
+| Returns | Type                                 | Description                                                                                              |
+| ------- | ------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| None    | `React.ComponentType<ProviderProps>` | A component that wraps the provided components in a nested tree structure using React context providers. |
+
+### Example
+
+<Callout type="error" emoji="🚫">
+  **Avoid** this type of provider tree construction.
+</Callout>
+
+```jsx
+const root = createRoot(document.getElementById("root"));
+root.render(
+  <ThemeContext.Provider>
+    <UserContext.Provider>
+      <QueryClientProvider client={queryClient}>
+        <Provider store={store}>
+          <IntlProvider locale={usersLocale}>
+            <App />
+          </IntlProvider>
+        </Provider>
+      </QueryClientProvider>
+    </UserContext.Provider>
+  </ThemeContext.Provider>
+);
+```
+
+<Callout emoji="✅">**Do** this type of provider tree construction.</Callout>
+
+```jsx
+import { buildProvidersTree } from "@/context/build-provider-tree";
+
+const ProvidersTree = buildProvidersTree([
+  [ThemeContext.Provider],
+  [UserContext.Provider],
+  [QueryClientProvider, { client: queryClient }],
+  [ReduxProvider, { store }],
+  [IntlProvider, { locale: usersLocale }],
+]);
+
+const root = createRoot(document.getElementById("root"));
+root.render(
+  <ProvidersTree>
+    <App />
+  </ProvidersTree>
+);
+```
