@@ -2,9 +2,44 @@
   "index": "Introduction",
   "getting-started": "Getting Started",
   "cli": "CLI",
-  "variants-docs": "Variants",
-  "context-docs": "Context",
-  "layout-docs": "Layout",
-  "typography-docs": "Typography",
-  "hook-docs": "Hooks"
+  "-- Variants": {
+    "type": "separator",
+    "title": "Variants"
+  },
+  "layout": "Layout",
+  "typography": "Typography",
+  "-- Context": {
+    "type": "separator",
+    "title": "Context"
+  },
+  "build-provider-tree": "Build Provider Tree",
+  "-- Hooks": {
+    "type": "separator",
+    "title": "Hooks"
+  },
+  "use-array-state": "useArrayState",
+  "use-local-storage": "useLocalStorage",
+  "use-media-query": "useMediaQuery",
+  "use-scroll": "useScroll",
+  "-- Layouts": {
+    "type": "separator",
+    "title": "Layouts"
+  },
+  "container": "Container",
+  "section": "Section",
+  "box": "Box",
+  "flex": "Flex",
+  "grid": "Grid",
+  "-- Typography": {
+    "type": "separator",
+    "title": "Typography"
+  },
+  "heading": "Heading",
+  "text": "Text",
+  "blockquote": "Blockquote",
+  "quote": "Quote",
+  "code": "Code",
+  "kbd": "Kbd",
+  "em": "Em",
+  "strong": "Strong"
 }
