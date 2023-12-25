@@ -1,0 +1,30 @@
+import { Cards, Card } from "nextra/components";
+import { CodeBracketIcon } from "@heroicons/react/24/solid";
+
+# Container
+
+Constrains the maximum width of page content
+
+<Cards>
+  <Card
+    icon={<CodeBracketIcon />}
+    title="View Source"
+    href="https://github.com/Tarikul-Islam-Anik/oxyzen-ui/blob/main/components/layout/container.tsx"
+  />
+</Cards>
+
+## Usage
+
+```jsx
+<Container>
+  <DecorativeBox>
+    <Box py="9" />
+  </DecorativeBox>
+</Container>
+```
+
+## API Reference
+
+This component is based othe `div` element and supports [common margin props](/themes/docs/theme/layout#margin-props).
+
+The props are shared between [Box](/Layout/box), [Flex](/Layout/flex), [Grid](/Layout/grid), [Container](/Layout/container) and [Section](/Layout/section) layout components.
