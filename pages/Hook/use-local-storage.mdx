@@ -1,0 +1,41 @@
+# useLocalStorage
+
+The `useLocalStorage` hook is a custom React hook that allows you to add state persistence to your React state by storing it in local storage.
+
+## API Reference
+
+```typescript
+useLocalStorage<T>(key: string, initialValue: T): [T, (value: T) => void]
+```
+
+**Parameters**
+
+| Name           | Type     | Description                                                  |
+| -------------- | -------- | ------------------------------------------------------------ |
+| `key`          | `string` | A string that will be used as the key for the local storage. |
+| `initialValue` | `T`      | The initial value for the state.                             |
+
+**Returns**
+
+| Name    | Type | Description                     |
+| ------- | ---- | ------------------------------- |
+| `value` | `T`  | The current value of the state. |
+
+## Example
+
+```jsx copy
+import useLocalStorage from "./use-local-storage";
+
+function Component() {
+  const [value, setValue] = useLocalStorage("myKey", "Initial Value");
+
+  return (
+    <div>
+      <p>Stored Value: {value}</p>
+      <button onClick={() => setValue("New Value")}>Set Value</button>
+    </div>
+  );
+}
+```
+
+In this example, value is the current state that's stored in local storage under the key 'myKey'. The setValue function can be used to update the value and sync it with local storage.
