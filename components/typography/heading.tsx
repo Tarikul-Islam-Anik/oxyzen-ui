@@ -30,7 +30,7 @@ const Heading = React.forwardRef<HeadingElement, HeadingProps>(
       style,
       color,
       transform,
-      weight,
+      weight = 'bold',
       asChild = false,
       ...textProps
     } = props;
