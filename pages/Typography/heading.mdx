@@ -1,0 +1,112 @@
+import { Cards, Card } from "nextra/components";
+import { CodeBracketIcon } from "@heroicons/react/24/solid";
+import { Heading } from "@/components/typography/heading";
+
+# Heading
+
+A semantic heading element.
+
+```jsx filename="The quick brown fox jumps over the lazy dog"
+<Heading>The quick brown fox jumps over the lazy dog</Heading>
+```
+
+<Cards>
+  <Card
+    icon={<CodeBracketIcon />}
+    title="View Source"
+    href="https://github.com/Tarikul-Islam-Anik/oxyzen-ui/blob/main/components/typography/heading.tsx"
+  />
+</Cards>
+
+## API Reference
+
+This component is based on the `h1` element. Click [here](/Variants/typography) to see all the variants.
+
+| Prop      | Type                                       | Default          |
+| --------- | ------------------------------------------ | ---------------- |
+| asChild   | boolean                                    | false            |
+| as        | enum?                                      | `h1`             |
+| size      | enum?                                      | `6`              |
+| weight    | `light` \| `regular` \| `medium` \| `bold` | `bold`           |
+| align     | `left` \| `center` \| `right`              | No default value |
+| color     | enum?                                      | black            |
+| className | string?                                    | No default value |
+
+## Examples
+
+### As another element
+
+Use the `as` prop to change the heading level. This prop is purely semantic and does not change the visual appearance.
+
+<br />
+<Heading as="h1">Level 1</Heading>
+<Heading as="h2">Level 2</Heading>
+<Heading as="h3">Level 3</Heading>
+
+```jsx /as/
+<Heading as="h1">Level 1</Heading>
+<Heading as="h2">Level 2</Heading>
+<Heading as="h3">Level 3</Heading>
+```
+
+### Size
+
+Use the `size` prop to control the size of the heading. The prop also provides correct line height and corrective letter spacing—as text size increases, the relative line height and letter spacing decrease.
+
+<br />
+<Heading size="xs">The quick brown fox jumps over the lazy dog</Heading>
+<Heading size="sm">The quick brown fox jumps over the lazy dog</Heading>
+<Heading size="md">The quick brown fox jumps over the lazy dog</Heading>
+<Heading size="lg">The quick brown fox jumps over the lazy dog</Heading>
+<Heading size="xl">The quick brown fox jumps over the lazy dog</Heading>
+<Heading size="2xl">The quick brown fox jumps over the lazy dog</Heading>
+
+```jsx /size/
+<Flex direction="column" gap="3">
+  <Heading size="xs">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading size="sm">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading size="md">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading size="lg">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading size="xl">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading size="2xl">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading size="3xl">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading size="4xl">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading size="5xl">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading size="6xl">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading size="7xl">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading size="8xl">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading size="9xl">The quick brown fox jumps over the lazy dog</Heading>
+</Flex>
+```
+
+### Align
+
+Use the `align` prop to set text alignment.
+
+<br />
+<Heading align="left">Left-aligned</Heading>
+<Heading align="center">Center-aligned</Heading>
+<Heading align="right">Right-aligned</Heading>
+
+```jsx /align/
+<Heading align="left">Left-aligned</Heading>
+<Heading align="center">Center-aligned</Heading>
+<Heading align="right">Right-aligned</Heading>
+```
+
+### Color
+
+Use the `color` prop to assign a specific [color](/themes/docs/theme/color), ignoring the global theme. The text colors are designed to achieve at least Lc 60 APCA contrast over common background colors.
+
+<br />
+
+```jsx /color/
+<Flex direction="column">
+  <Heading color="black">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading color="white">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading color="primary">The quick brown fox jumps over the lazy dog</Heading>
+  <Heading color="destructive">
+    The quick brown fox jumps over the lazy dog
+  </Heading>
+</Flex>
+```
