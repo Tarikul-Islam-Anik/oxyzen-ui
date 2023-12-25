@@ -1,0 +1,29 @@
+import { Cards, Card } from "nextra/components";
+import { CodeBracketIcon } from "@heroicons/react/24/solid";
+
+# Section
+
+Denotes a section of page content.
+
+<Cards>
+  <Card
+    icon={<CodeBracketIcon />}
+    title="View Source"
+    href="https://github.com/Tarikul-Islam-Anik/oxyzen-ui/blob/main/components/layout/section.tsx"
+  />
+</Cards>
+
+## Usage
+
+```jsx
+<Section>
+  <Heading>Section title</Heading>
+  <Text>Section content</Text>
+</Section>
+```
+
+## API Reference
+
+This component is based on the `section` element and supports [common margin props](/themes/docs/theme/layout#margin-props).
+
+The props are shared between [Box](/Layout/box), [Flex](/Layout/flex), [Grid](/Layout/grid), [Container](/Layout/container) and [Section](/Layout/section) layout components.
