@@ -68,6 +68,9 @@ const config = {
         <meta name="og:image" content={socialCard} />
         <meta name="apple-mobile-web-app-title" content="OxyZen UI" />
         <link rel="shortcut icon" href="/favicon.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg" />
       </>
     );
   },
