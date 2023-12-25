@@ -1,0 +1,169 @@
+import { Cards, Card } from "nextra/components";
+import { CodeBracketIcon } from "@heroicons/react/24/solid";
+import { Box } from "@/components/layout/box";
+import { Text } from "@/components/typography/text";
+import { Strong } from "@/components/typography/strong";
+
+# Text
+
+A foundational text primitive.
+
+```js filename="The quick brown fox jumps over the lazy dog."
+<Text>The quick brown fox jumps over the lazy dog.</Text>
+```
+
+<Cards>
+  <Card
+    icon={<CodeBracketIcon />}
+    title="View Source"
+    href="https://github.com/Tarikul-Islam-Anik/oxyzen-ui/blob/main/components/typography/text.tsx"
+  />
+</Cards>
+
+## API Reference
+
+This component is based on the `span` element. Click [here](/Variants/typography) to see all the variants.
+
+| Prop      | Type                                       | Default |
+| --------- | ------------------------------------------ | ------- |
+| asChild   | boolean                                    | false   |
+| as        | `p` \| `label` \| `div` \| `span`          | `span`  |
+| size      | enum?                                      | -       |
+| weight    | `light` \| `regular` \| `medium` \| `bold` | -       |
+| align     | `left` \| `center` \| `right`              | -       |
+| color     | enum?                                      | black   |
+| className | string?                                    | -       |
+
+## Examples
+
+### As another element
+
+Use the `as` prop to render text as a `p`, `label`, `div` or `span`. This prop is purely semantic and does not alter visual appearance.
+
+<br />
+<Box border="1" rounded="md" p="4" className="border-gray-400">
+  <Text as="span">
+    This is a <Strong>paragraph</Strong> element.
+  </Text>
+  <Text as="span">
+    This is a <Strong>label</Strong> element.
+  </Text>
+  <Text as="span">
+    This is a <Strong>div</Strong> element.
+  </Text>
+  <Text as="span">
+    This is a <Strong>span</Strong> element.
+  </Text>
+</Box>
+
+```jsx /as/
+<Text as="p">This is a <Strong>paragraph</Strong> element.</Text>
+<Text as="label">This is a <Strong>label</Strong> element.</Text>
+<Text as="div">This is a <Strong>div</Strong> element.</Text>
+<Text as="span">This is a <Strong>span</Strong> element.</Text>
+```
+
+### Size
+
+Use the `size` prop to control text size. This prop also provides correct line height and corrective letter spacing—as text size increases, the relative line height and letter spacing decrease.
+
+<br />
+
+<Box border="1" rounded="md" p="4" className="border-gray-400">
+  <Text size="xs">The quick brown fox jumps over the lazy dog.</Text>
+  <br />
+  <Text size="sm">The quick brown fox jumps over the lazy dog.</Text>
+  <br />
+  <Text size="md">The quick brown fox jumps over the lazy dog.</Text>
+  <br />
+  <Text size="lg">The quick brown fox jumps over the lazy dog.</Text>
+  <br />
+  <Text size="xl">The quick brown fox jumps over the lazy dog.</Text>
+  <br />
+  <Text size="2xl">The quick brown fox jumps over the lazy dog.</Text>
+</Box>
+
+```jsx /size/
+<Flex direction="column" gap="3">
+  <Text size="xs">The quick brown fox jumps over the lazy dog.</Text>
+  <Text size="sm">The quick brown fox jumps over the lazy dog.</Text>
+  <Text size="md">The quick brown fox jumps over the lazy dog.</Text>
+  <Text size="lg">The quick brown fox jumps over the lazy dog.</Text>
+  <Text size="xl">The quick brown fox jumps over the lazy dog.</Text>
+  <Text size="2xl">The quick brown fox jumps over the lazy dog.</Text>
+  <Text size="3xl">The quick brown fox jumps over the lazy dog.</Text>
+  <Text size="4xl">The quick brown fox jumps over the lazy dog.</Text>
+  <Text size="5xl">The quick brown fox jumps over the lazy dog.</Text>
+  <Text size="6xl">The quick brown fox jumps over the lazy dog.</Text>
+  <Text size="7xl">The quick brown fox jumps over the lazy dog.</Text>
+  <Text size="8xl">The quick brown fox jumps over the lazy dog.</Text>
+  <Text size="9xl">The quick brown fox jumps over the lazy dog.</Text>
+</Flex>
+```
+
+### Weight
+
+Use the `weight` prop to set the text weight.
+
+<br />
+
+<Box border="1" rounded="md" p="4" className="border-gray-400">
+  <Text weight="regular">The quick brown fox jumps over the lazy dog.</Text>
+  <br />
+  <Text weight="medium">The quick brown fox jumps over the lazy dog.</Text>
+  <br />
+  <Text weight="bold">The quick brown fox jumps over the lazy dog.</Text>
+</Box>
+
+```jsx /weight/
+<Text weight="regular">
+  The quick brown fox jumps over the lazy dog.
+</Text>
+
+<Text weight="medium">
+  The quick brown fox jumps over the lazy dog.
+</Text>
+
+<Text weight="bold">
+  The quick brown fox jumps over the lazy dog.
+</Text>
+```
+
+### Align
+
+Use the `align` prop to set text alignment.
+
+<br />
+
+<Box border="1" rounded="md" p="4" className="border-gray-400">
+  <Text align="left" as="div">
+    Left-aligned
+  </Text>
+  <br />
+  <Text align="center" as="div">
+    Center-aligned
+  </Text>
+  <br />
+  <Text align="right" as="div">
+    Right-aligned
+  </Text>
+</Box>
+
+```jsx /align/
+<Text align="left" as='p'>Left-aligned</Text>
+<Text align="center" as='p'>Center-aligned</Text>
+<Text align="right" as='p'>Right-aligned</Text>
+```
+
+### Color
+
+Use the `color` prop to assign a specific color, ignoring the global theme. The text colors are designed to achieve at least Lc 60 APCA contrast over common background colors.
+
+```jsx /color/
+<Flex direction="column">
+  <Text color="primary">The quick brown fox jumps over the lazy dog.</Text>
+  <Text color="destructive">The quick brown fox jumps over the lazy dog.</Text>
+  <Text color="white">The quick brown fox jumps over the lazy dog.</Text>
+  <Text color="black">The quick brown fox jumps over the lazy dog.</Text>
+</Flex>
+```
