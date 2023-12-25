@@ -1,0 +1,6 @@
+{
+  "use-scroll": "useScroll",
+  "use-array-state": "useArrayState",
+  "use-media-query": "useMediaQuery",
+  "use-local-storage": "useLocalStorage",
+}
