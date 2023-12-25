@@ -1,17 +1,17 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
-import { Slot } from '@radix-ui/react-slot';
+import React from "react";
+import { cn } from "@/lib/utils";
+import { Slot } from "@radix-ui/react-slot";
 import {
   boxVariants,
   gridVariants,
   BoxVariants,
   GridVariants,
-} from './variants';
-import { cx } from 'class-variance-authority';
+} from "./variants";
+import { cx } from "class-variance-authority";
 
-type GridElement = React.ElementRef<'div'>;
+type GridElement = React.ElementRef<"div">;
 interface GridProps
-  extends React.ComponentPropsWithoutRef<'div'>,
+  extends React.ComponentPropsWithoutRef<"div">,
     BoxVariants,
     GridVariants {
   asChild?: boolean;
@@ -32,6 +32,8 @@ const Grid = React.forwardRef<GridElement, GridProps>((props, forwardedRef) => {
     position,
     width,
     height,
+    border,
+    rounded,
     m,
     mt,
     mr,
@@ -48,17 +50,19 @@ const Grid = React.forwardRef<GridElement, GridProps>((props, forwardedRef) => {
     py,
     ...gridProps
   } = props;
-  const Comp = asChild ? Slot : 'div';
+  const Comp = asChild ? Slot : "div";
 
   const gridClassName = cx(
     boxVariants({
-      display: 'grid',
+      display: "grid",
       gap,
       gapX,
       gapY,
       position,
       width,
       height,
+      border,
+      rounded,
       m,
       mt,
       mr,
@@ -90,6 +94,6 @@ const Grid = React.forwardRef<GridElement, GridProps>((props, forwardedRef) => {
   );
 });
 
-Grid.displayName = 'Grid';
+Grid.displayName = "Grid";
 export { Grid };
 export type { GridProps };
