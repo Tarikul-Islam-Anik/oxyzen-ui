@@ -1,0 +1,127 @@
+import { Cards, Card } from "nextra/components";
+import { CodeBracketIcon } from "@heroicons/react/24/solid";
+import { Box } from "@/components/layout/box";
+import { Grid } from "@/components/layout/grid";
+
+# Grid
+
+Component for creating grid layouts.
+
+<Cards>
+  <Card
+    icon={<CodeBracketIcon />}
+    title="View Source"
+    href="https://github.com/Tarikul-Islam-Anik/oxyzen-ui/blob/main/components/layout/grid.tsx"
+  />
+</Cards>
+
+## Usage
+
+<br />
+
+<Grid cols="3" gap="4" width="auto">
+  <Box className="h-20">
+    <Box
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")`,
+      }}
+      border="1"
+      rounded="md"
+      height="full"
+      className="dark:border-gray-700"
+    />
+  </Box>
+  <Box className="h-20">
+    <Box
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")`,
+      }}
+      border="1"
+      rounded="md"
+      height="full"
+      className="dark:border-gray-700"
+    />
+  </Box>
+  <Box className="h-20">
+    <Box
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")`,
+      }}
+      border="1"
+      rounded="md"
+      height="full"
+      className="dark:border-gray-700"
+    />
+  </Box>
+  <Box className="h-20">
+    <Box
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")`,
+      }}
+      border="1"
+      rounded="md"
+      height="full"
+      className="dark:border-gray-700"
+    />
+  </Box>
+  <Box className="h-20">
+    <Box
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")`,
+      }}
+      border="1"
+      rounded="md"
+      height="full"
+      className="dark:border-gray-700"
+    />
+  </Box>
+  <Box className="h-20">
+    <Box
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")`,
+      }}
+      border="1"
+      rounded="md"
+      height="full"
+      className="dark:border-gray-700"
+    />
+  </Box>
+</Grid>
+
+```jsx
+<Grid cols="3" gap="4" width="auto">
+  <Box className="h-20">
+    <DecorativeBox />
+  </Box>
+  <Box className="h-20">
+    <DecorativeBox />
+  </Box>
+  <Box className="h-20">
+    <DecorativeBox />
+  </Box>
+  <Box className="h-20">
+    <DecorativeBox />
+  </Box>
+  <Box className="h-20">
+    <DecorativeBox />
+  </Box>
+  <Box className="h-20">
+    <DecorativeBox />
+  </Box>
+</Grid>
+```
+
+## API Reference
+
+This component is based on the `div` element and supports [common margin props](/Variants/layout).
+
+Use these props to create grid layouts.
+
+| Prop    | Type                                                    |
+| ------- | ------------------------------------------------------- |
+| asChild | boolean                                                 |
+| cols    | string                                                  |
+| rows    | string                                                  |
+| align   | `start` \| `center` \| `end` \| `baseline` \| `stretch` |
+
+The props are shared between [Box](/Layout/box), [Flex](/Layout/flex), [Grid](/Layout/grid), [Container](/Layout/container) and [Section](/Layout/section) layout components.
