@@ -1,0 +1,33 @@
+import { Cards, Card } from "nextra/components";
+import { CodeBracketIcon } from "@heroicons/react/24/solid";
+import { Code } from "@/components/typography/code";
+
+# Code
+
+Marks text to signify a short fragment of computer code.
+
+<Cards>
+  <Card
+    icon={<CodeBracketIcon />}
+    title="View Source"
+    href="https://github.com/Tarikul-Islam-Anik/oxyzen-ui/blob/main/components/typography/code.tsx"
+  />
+</Cards>
+
+## Usage
+
+<br />
+<Code>console.log()</Code>
+
+```jsx
+<Code>console.log()</Code>
+```
+
+## API Reference
+
+This component is based on the `code` element.
+
+| Prop      | Type    |
+| --------- | ------- |
+| size      | enum    |
+| className | string? |
