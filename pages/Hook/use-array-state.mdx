@@ -1,0 +1,57 @@
+# useArrayState
+
+`useArrayState` is a custom React hook that provides a convenient way to manage an array state.
+
+## API Reference
+
+```typescript
+type UseArrayState<T> = [
+  T[],
+  {
+    add: (newValue: T) => void;
+    remove: (index: number) => void;
+  }
+];
+```
+
+**Parameters**
+
+| Name           | Type  | Description                       |
+| :------------- | :---- | :-------------------------------- |
+| `initialValue` | `T[]` | Initial value of the array state. |
+
+**Returns**
+
+| Name                | Type                                                               | Description          |
+| :------------------ | :----------------------------------------------------------------- | :------------------- |
+| `arrayState`        | `T[]`                                                              | Array state.         |
+| `arrayStateActions` | `{ add: (newValue: T) => void; remove: (index: number) => void; }` | Array state actions. |
+
+## Example
+
+```jsx
+import useArrayState from "@/hooks/use-array-state";
+
+function MyComponent() {
+  const [items, { add, remove }] = useArrayState < string > ["initial item"];
+
+  const handleAdd = () => {
+    add(`item ${items.length + 1}`);
+  };
+
+  const handleRemove = (index: number) => {
+    remove(index);
+  };
+
+  return (
+    <div>
+      <button onClick={handleAdd}>Add item</button>
+      {items.map((item, index) => (
+        <div key={index}>
+          {item} <button onClick={() => handleRemove(index)}>Remove</button>
+        </div>
+      ))}
+    </div>
+  );
+}
+```
