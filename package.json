@@ -1,0 +1,35 @@
+{
+  "name": "oxyzen-ui",
+  "version": "0.1.0",
+  "description": "Simple and Handpicked UI Components, Hooks and Utilities for React.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tarikul-Islam-Anik/oxyzen-ui.git"
+  },
+  "author": "MD. Tarikul Islam Anik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tarikul-Islam-Anik/oxyzen-ui/issues"
+  },
+  "homepage": "https://oxyzen-ui.vercel.app/",
+  "dependencies": {
+    "@heroicons/react": "^2.1.1",
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "next": "^13.0.6",
+    "nextra": "latest",
+    "nextra-theme-docs": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.19.3",
+    "typescript": "4.9.5"
+  }
+}
