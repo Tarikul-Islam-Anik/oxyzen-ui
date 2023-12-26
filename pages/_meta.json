@@ -2,6 +2,13 @@
   "index": "Introduction",
   "getting-started": "Getting Started",
   "cli": "CLI",
+  "-- Editor": {
+    "type": "separator",
+    "title": "Editor"
+  },
+  "vs-code": "VS Code",
+  "es-lint": "ESLint",
+  "plugins": "Plugins",
   "-- Variants": {
     "type": "separator",
     "title": "Variants"
