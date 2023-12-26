@@ -1,0 +1,74 @@
+# ESLint
+
+Here is a list of ESLint rules that are used in almost every project I work on.
+
+## Installation
+
+```sh npm2yarn
+npm i eslint eslint-config-next eslint-plugin-import --save-dev
+```
+
+## Usage
+
+Create a `.eslintrc` file in the root of your project and add the following:
+
+```json copy filename=".eslintrc"
+{
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "next/core-web-vitals",
+    "turbo",
+    "prettier",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": ["import", "tailwindcss"],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/classnames-order": "error",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [["external", "builtin"], "internal", ["sibling"], "index"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@/components/**",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["internal", "react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": ["cn", "cva"],
+      "config": "tailwind.config.ts"
+    },
+    "overrides": [
+      {
+        "files": ["*.ts", "*.tsx"],
+        "parser": "@typescript-eslint/parser"
+      }
+    ]
+  }
+}
+```
